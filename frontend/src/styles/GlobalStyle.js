@@ -22,6 +22,6 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Nunito', sans-serif;
         font-size: clamp(1rem, 1.5vw, 1.2rem);
         overflow: hidden;
-        color: --primary-color2;
+        color: rgba(34, 34, 96, .6);
     }
 `;

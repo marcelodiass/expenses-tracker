@@ -7,10 +7,14 @@ import { MainLayout } from './styles/Layouts.js';
 import Dashboard from "./components/dashboard/dashboard.js";
 import Expenses from "./components/expenses/expenses.js";
 import Income from "./components/incomes/incomes.js";
+import { useGlobalContext } from "./context/globalContext.js";
 
 function App() {
 
   const [active, setActive] = useState(1)
+
+  const global = useGlobalContext()
+  console.log(global)
 
   const displayData = () => {
       switch(active){

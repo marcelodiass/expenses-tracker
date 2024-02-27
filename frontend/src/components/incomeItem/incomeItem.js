@@ -4,7 +4,7 @@ import { bitcoin, book, calender, card, circle, clothing, comment, dollar, food,
 import Button from "../button/button.js";
 
 function IncomeItem({
-  _id,
+  id,
   title,
   amount,
   date,
@@ -90,6 +90,7 @@ function IncomeItem({
               color={"#fff"}
               iColor={"#fff"}
               hColor={"var(--color-green)"}
+              onClick={() => {deleteItem(id)}}
             />
           </div>
         </div>

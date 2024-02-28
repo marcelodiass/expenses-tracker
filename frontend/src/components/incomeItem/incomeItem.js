@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { bitcoin, book, calender, card, circle, clothing, comment, dollar, food, freelance, medical, money, piggy, stocks, takeaway, trash, tv, users, yt } from '../../utils/icons.js';
 import Button from "../button/button.js";
+import { dateFormat } from "../../utils/dateFormat.js";
 
 function IncomeItem({
   id,
@@ -74,7 +75,7 @@ function IncomeItem({
               {dollar} {amount}
             </p>
             <p>
-              {calender} {date}
+              {calender} {dateFormat(date)}
             </p>
             <p>
               {comment}

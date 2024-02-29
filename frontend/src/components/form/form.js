@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import DatePicker from 'react-datepicker'
+import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useGlobalContext } from "../../context/globalContext";
 import Button from "../button/button";
@@ -31,8 +31,8 @@ function Form() {
       amount: "",
       date: "",
       category: "",
-      description: ""
-    })
+      description: "",
+    });
   };
 
   return (
@@ -136,7 +136,8 @@ const FormStyled = styled.form`
     }
   }
   .input-control {
-    input, .react-datepicker-wrapper {
+    input,
+    .react-datepicker-wrapper {
       width: 100%;
     }
   }

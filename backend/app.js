@@ -10,7 +10,13 @@ const PORT = process.env.PORT;
 
 // middlewares
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: ["https://expenses-tracker-backend.vercel.app"],
+  methods: ["POST", "GET", "DELETE"],
+  credentials: true
+}));
+
+mongoose.connect(process.env.MONGO_URL)
 
 // routes
 readdirSync("./routes").map((route) =>

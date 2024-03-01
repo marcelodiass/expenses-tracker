@@ -1,6 +1,6 @@
-const ExpenseSchema = require("../models/ExpenseModel");
+import ExpenseSchema, { find, findByIdAndDelete } from "../models/ExpenseModel";
 
-exports.addExpense = async (req, res) => {
+export async function addExpense(req, res) {
   const { title, amount, category, description, date } = req.body;
 
   const expense = ExpenseSchema({
@@ -26,21 +26,21 @@ exports.addExpense = async (req, res) => {
   } catch (error) {
     res.status(500).json({message: "Server Error"})
   }
-};
+}
 
-exports.getExpenses = async (req, res) => {
+export async function getExpenses(req, res) {
   try {
-    const expenses = await ExpenseSchema.find().sort({createdAt: -1})
+    const expenses = await find().sort({createdAt: -1})
     res.status(200).json(expenses)
   } catch (error) {
     res.status(500).json({message: "Server Error"})
   }
 }
 
-exports.deleteExpenses = async (req, res) => {
+export async function deleteExpenses(req, res) {
   const {id} = req.params
   
-  ExpenseSchema.findByIdAndDelete(id)
+  findByIdAndDelete(id)
     .then(() => {
       res.status(200).json({message: "Expense Deleted"})
     })

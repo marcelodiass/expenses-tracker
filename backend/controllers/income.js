@@ -1,6 +1,6 @@
-const IncomeSchema = require("../models/IncomeModel");
+import IncomeSchema, { find, findByIdAndDelete } from "../models/IncomeModel";
 
-exports.addIncome = async (req, res) => {
+export async function addIncome(req, res) {
   const { title, amount, category, description, date } = req.body;
 
   const income = IncomeSchema({
@@ -26,21 +26,21 @@ exports.addIncome = async (req, res) => {
   } catch (error) {
     res.status(500).json({message: "Server Error"})
   }
-};
+}
 
-exports.getIncomes = async (req, res) => {
+export async function getIncomes(req, res) {
   try {
-    const incomes = await IncomeSchema.find().sort({createdAt: -1})
+    const incomes = await find().sort({createdAt: -1})
     res.status(200).json(incomes)
   } catch (error) {
     res.status(500).json({message: "Server Error"})
   }
 }
 
-exports.deleteIncome = async (req, res) => {
+export async function deleteIncome(req, res) {
   const {id} = req.params
   
-  IncomeSchema.findByIdAndDelete(id)
+  findByIdAndDelete(id)
     .then(() => {
       res.status(200).json({message: "Income Deleted"})
     })

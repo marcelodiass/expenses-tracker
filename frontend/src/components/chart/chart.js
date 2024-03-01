@@ -33,7 +33,7 @@ function Chart() {
         labels: incomes.map((inc) =>{
             const {date} = inc
             return dateFormat(date)
-        }),
+        }).sort(),
         datasets: [
             {
                 label: 'Income',

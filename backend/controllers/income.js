@@ -1,6 +1,6 @@
 const IncomeSchema = require('../models/IncomeModel')
 
-export async function addIncome(req, res) {
+async function addIncome(req, res) {
   const { title, amount, category, description, date } = req.body;
 
   const income = IncomeSchema({
@@ -28,7 +28,7 @@ export async function addIncome(req, res) {
   }
 }
 
-export async function getIncomes(req, res) {
+async function getIncomes(req, res) {
   try {
     const incomes = await find().sort({createdAt: -1})
     res.status(200).json(incomes)
@@ -37,7 +37,7 @@ export async function getIncomes(req, res) {
   }
 }
 
-export async function deleteIncome(req, res) {
+async function deleteIncome(req, res) {
   const {id} = req.params
   
   findByIdAndDelete(id)

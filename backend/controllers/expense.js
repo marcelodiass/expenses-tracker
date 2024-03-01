@@ -1,6 +1,6 @@
 const ExpenseSchema = require('../models/ExpenseModel')
 
-export async function addExpense(req, res) {
+async function addExpense(req, res) {
   const { title, amount, category, description, date } = req.body;
 
   const expense = ExpenseSchema({
@@ -28,7 +28,7 @@ export async function addExpense(req, res) {
   }
 }
 
-export async function getExpenses(req, res) {
+async function getExpenses(req, res) {
   try {
     const expenses = await find().sort({createdAt: -1})
     res.status(200).json(expenses)
@@ -37,7 +37,7 @@ export async function getExpenses(req, res) {
   }
 }
 
-export async function deleteExpenses(req, res) {
+async function deleteExpenses(req, res) {
   const {id} = req.params
   
   findByIdAndDelete(id)

@@ -1,4 +1,4 @@
-import IncomeSchema, { find, findByIdAndDelete } from "../models/IncomeModel";
+const IncomeSchema = require('../models/IncomeModel')
 
 export async function addIncome(req, res) {
   const { title, amount, category, description, date } = req.body;

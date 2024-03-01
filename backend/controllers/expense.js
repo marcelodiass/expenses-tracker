@@ -1,4 +1,4 @@
-import ExpenseSchema, { find, findByIdAndDelete } from "../models/ExpenseModel";
+const ExpenseSchema = require('../models/ExpenseModel')
 
 export async function addExpense(req, res) {
   const { title, amount, category, description, date } = req.body;

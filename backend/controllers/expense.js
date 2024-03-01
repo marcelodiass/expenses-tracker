@@ -48,3 +48,5 @@ async function deleteExpenses(req, res) {
       res.status(500).json({message: "Server Error"})
     })
 }
+
+export { addExpense, getExpenses, deleteExpenses }

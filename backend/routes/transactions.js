@@ -1,5 +1,5 @@
-import { addExpense, getExpenses, deleteExpenses } from '../controllers/expense'
-import { addIncome, getIncomes, deleteIncome } from '../controllers/income'
+const { addExpense, getExpenses, deleteExpenses } = require('../controllers/expense')
+const { addIncome, getIncomes, deleteIncome } = require('../controllers/income')
 
 const router = require('express').Router()
 

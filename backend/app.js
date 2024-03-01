@@ -11,7 +11,7 @@ const PORT = process.env.PORT;
 // middlewares
 app.use(express.json());
 app.use(cors({
-  origin: ["https://expenses-tracker-backend.vercel.app"],
+  origin: ["https://expenses-tracker-backend-4hn7w5cze.vercel.app"],
   methods: ["POST", "GET", "DELETE"],
   credentials: true
 }));
